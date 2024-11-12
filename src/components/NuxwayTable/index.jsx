@@ -163,28 +163,28 @@ export default function NuxwayTable({
                 key={action}
                 className={`flex items-center transition-colors duration-200 ${
                   action === "Edit"
-                    ? "text-lg  text-default-400 cursor-pointer active:opacity-50" // Color para editar
+                    ? "text-lg  text-default-400 cursor-pointer active:opacity-50"
                     : action === "Delete"
-                    ? "text-red-500 text-lg text-danger cursor-pointer active:opacity-50" // Color para eliminar
+                    ? "text-red-500 text-lg text-danger cursor-pointer active:opacity-50"
                     : action === "View"
-                    ? "text-green-500 hover:text-green-700 text-lg text-default-400 cursor-pointer active:opacity-50" // Color para ver
-                    : "text-blue-500 hover:text-blue-700" // Color por defecto
+                    ? "text-green-500 hover:text-green-700 text-lg text-default-400 cursor-pointer active:opacity-50"
+                    : "text-blue-500 hover:text-blue-700"
                 }`}
               >
                 {action === "Edit" ? (
                   <Tooltip content="Edit">
                     <Link
-                      href={`/item/edit?numserial=${item.numserial}`}
+                      href={`/item/edit/${item.numserial}`}
                       className={`${isActive ? "text-blue-500" : ""}`}
                     >
-                      <EditIcon className="mr-1" /> {/* Icono de edición */}
+                      <EditIcon className="mr-1" />
                     </Link>
                   </Tooltip>
                 ) : action === "View" ? (
                   <Tooltip content="View Details">
                     <Link
-                      href={`/inventory/item/view?numserial=${item.numserial}`}
-                      className={`${isActive ? "text-blue-500" : ""}`} 
+                      href={`/inventory/item/view/${item.numserial}`}
+                      className={`${isActive ? "text-blue-500" : ""}`}
                     >
                       <EyeIcon className="mr-1" />
                     </Link>
@@ -195,7 +195,7 @@ export default function NuxwayTable({
                       onClick={() => handleDelete(item.numserial)}
                       className="flex items-center cursor-pointer"
                     >
-                      <DeleteIcon className="mr-1" /> {/* Icono de eliminar */}
+                      <DeleteIcon className="mr-1" />
                     </span>
                   </Tooltip>
                 ) : (

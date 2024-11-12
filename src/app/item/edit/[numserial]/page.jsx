@@ -1,18 +1,16 @@
 "use client";
-import { Suspense, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import GenericForm from "@/components/GenericForm";
 import { Spinner } from "@nextui-org/react";
 import Link from "next/link";
-import { useSearchParams } from "next/navigation";
 
-function EditItemUI() {
+export default function EditItem({ params }) {
   const [idcategory, setCategory] = useState("");
   const [initialValues, setInitialValues] = useState({});
   const [initilabelCategory, setLabel] = useState("");
   const [success, setSuccess] = useState();
   const [loading, setLoading] = useState(true);
-  const searchParams = useSearchParams();
-  const numserial = searchParams.get("numserial");
+  const { numserial } = params;
 
   useEffect(() => {
     const fetchData = async () => {
@@ -89,14 +87,7 @@ function EditItemUI() {
   }
 
   return (
-    <Suspense
-      fallback={
-        <div className="flex flex-col items-center justify-center h-screen">
-          <Spinner size="lg" color="primary" />
-          <h2 className="mt-4 text-lg text-gray-700">Loading data...</h2>
-        </div>
-      }
-    >
+    <div>
       {loading ? (
         <Spinner size="lg" color="primary" />
       ) : success === true ? (
@@ -148,14 +139,6 @@ function EditItemUI() {
           initialValues={initialValues}
         />
       )}
-    </Suspense>
-  );
-}
-
-export default function EditItem() {
-  return (
-    <Suspense>
-      <EditItemUI />
-    </Suspense>
+    </div>
   );
 }

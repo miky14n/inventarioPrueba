@@ -2,14 +2,13 @@
 
 import React, { useEffect, useState } from "react";
 import { Card, CardBody, Image, Button, Badge } from "@nextui-org/react";
-import { HeartIcon } from "./HeartIcon";
+import { HeartIcon } from "../HeartIcon";
 import Link from "next/link";
 
 const InventoryItemCard = ({ item }) => {
   const [liked, setLiked] = useState(false);
   const [itemData, setItemData] = useState(item);
 
-  // Update `itemData` whenever `item` prop changes
   useEffect(() => {
     console.log(item);
     setItemData(item);
@@ -106,9 +105,7 @@ const InventoryItemCard = ({ item }) => {
 
         <div className="flex justify-center mt-6">
           <Link href="/inventory">
-            <Button color="primary">
-              Volver
-            </Button>
+            <Button color="primary">Volver</Button>
           </Link>
         </div>
       </CardBody>

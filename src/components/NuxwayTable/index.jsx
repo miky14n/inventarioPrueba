@@ -174,7 +174,7 @@ export default function NuxwayTable({
                 {action === "Edit" ? (
                   <Tooltip content="Edit">
                     <Link
-                      href={`/item/edit/${item.numserial}`}
+                      href={`/inventory/item/edit/${item.numserial}`}
                       className={`${isActive ? "text-blue-500" : ""}`}
                     >
                       <EditIcon className="mr-1" />
@@ -318,7 +318,7 @@ export default function NuxwayTable({
             </DropdownMenu>
           </Dropdown>
           {addInventory && (
-            <Link href="/item">
+            <Link href="/inventory/item">
               <Button
                 className="bg-foreground text-background"
                 endContent={<PlusIcon />}

@@ -34,6 +34,7 @@ function Inventory() {
           actions={["View", "Edit", "Delete"]}
           columns={columns}
           addInventory={true}
+          searchers={["model", "mark", "numserial"]}
         />
       </NuxContainer>
     </div>

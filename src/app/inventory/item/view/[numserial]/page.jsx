@@ -1,5 +1,4 @@
-import InventoryItemCard from "../../InventoryItemCard";
-
+import InventoryItemCard from "../InventoryItemCard";
 export default async function ItemDetail({ params }) {
   const { numserial } = params;
   let itemData = null;

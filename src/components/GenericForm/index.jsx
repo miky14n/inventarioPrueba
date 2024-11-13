@@ -24,6 +24,7 @@ export default function GenericForm({
   }, [memoizedInitialValues]);
 
   const handleInputChange = (field, value, nameColum) => {
+    console.log("el field", field), "El valor", value;
     setFormData((prevData) => ({
       ...prevData,
       [field || nameColum]: value,
@@ -46,7 +47,9 @@ export default function GenericForm({
       )}
       <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
         <div className="bg-white shadow-md rounded-lg p-6 w-96">
-          <h2 className="text-2xl font-bold mb-4 text-center">{title}</h2>
+          <h2 className="text-2xl font-bold mb-4 text-center">
+            {title + " " + initialValues.numserial}
+          </h2>
           {fields.map((field, index) => (
             <div key={index} className="mb-4">
               <SimpleInput

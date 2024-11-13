@@ -46,6 +46,7 @@ export default function EditItem({ params }) {
   const handleSubmit = async (formData) => {
     console.log("soy el dato de actualizar", formData);
     const datUpdate = {
+      numserial: formData.numserial,
       idcategory: idcategory,
       mark: formData.mark,
       model: formData.model,
@@ -110,7 +111,6 @@ export default function EditItem({ params }) {
         <GenericForm
           title="Edit Item"
           fields={[
-            { name: "numserial", label: "Serial Number", type: "text" },
             { name: "model", label: "Model", type: "text" },
             { name: "image", label: "Image URL", type: "text" },
             { name: "bar_code", label: "Bar Code", type: "text" },
